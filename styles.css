@@ -1,23 +1,12 @@
-:root {
-    /* Paleta de colores */
-
-    --background:#f5e0c5;
-    --background-2: #322020;
-    --background-3:#753a32;
-    --main-text:#320000;
-    --destacada: #c22828;
-
-
-/* Fuentes */
-    --font-family: 'Josefin Sans';
-
+:root { 
+    --background: #ffffff;
+    --background-2: #9c6d41;
+    --background-3: #753a32;
+    --main-text: #70321f;  
+    --destacada: #c26628;
+    --font-family: 'Josefin Sans', sans-serif;
 }
 
-
-
-body {
-    background-color: var(--background-2);
-}
 * {
     margin: 0;
     padding: 0;
@@ -25,80 +14,111 @@ body {
     list-style: none;
     text-decoration: none;
     font-family: var(--font-family);
+    transition: all 0.3s ease; 
 }
 
-header {
-    display: flex;
-    align-items: center;
-    background: var(--background);
-    padding: 10px 40px;
-    height: 75px;
-
+body {
+    background-image: url('../img/background.jpg');
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center;
+    min-height: 100vh;
 }
+
+/* Navbar */
 
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 15px 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
+    z-index: 1000;
+    background: rgba( 255, 255, 255, 0.7 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.logo-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
     padding: 0;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.navbar-list-1 {
-    display: flex;
-    gap: 80px;
-    flex: 2;
-    justify-content: flex-end;
-    margin-right: 100px;
+.logo-btn img {
+    height: 100px;
+    width: auto;
 }
 
-.navbar-list-2 {
+.logo-btn:hover img {
+    transform: scale(1.5); 
+}
+
+
+.navbar-list {
     display: flex;
-    gap: 80px;
-    flex: 2;
-    justify-content: flex-start;
-    margin-left: 100px;
-    
+    gap: 40px;
+    position: relative;
 }
 
 a {
-    color:var(--main-text)
+    color: var(--main-text);
+    position: relative; 
 }
 
-.logo {
-    height: 70px;
-    width: auto;
-    object-fit: contain;
-    flex: 1
-    height: 60px; 
+/* Asegurémonos de que el enlace ocupe el espacio completo y no haya interferencias */
+.navbar-list a {
+    position: relative;
+    display: inline-block; /* Asegura que el enlace sea un bloque en línea */
 }
+
+/* Transición para el span dentro del a */
+.navbar-list a span {
+    display: inline-block; /* Hace que el span ocupe su propio espacio */
+    transition: transform 0.3s ease; /* Transición suave solo para el texto */
+}
+
+/* Aplicar el hover sobre el a y hacer que el span crezca */
+.navbar-list a:hover span {
+    transform: scale(1.2); /* Aumenta solo el span del enlace */
+}
+
+/* Gracias CHAT GPT, 80 horas estuvimos borrando codigo y escribiendo para que solo el span pudiera aumentar de tamaño*/
+
 .cart-icon {
-    height: 25px; 
-    margin-left: 20px;
-    
+    height: 35px;
+    width: auto;
+}
+
+.cart-icon:hover {
+    transform: scale(1.4); 
 }
 
 span {
     color: var(--destacada);
 }
 
-.divider {
-    width: 100%;
-    height: 2px;
-    background-color: black;
-}
-
-
 /* Hero */
-
 .hero-container {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0;
-    height: 50vh; 
+    height: 50vh;   
+    margin-top: 120px; 
 }
+
 .hero {
     display: flex;
     align-items: center;
@@ -106,21 +126,28 @@ span {
     border-radius: 3rem;
     padding: 40px;
     gap: 20px;
+    background: rgba( 255, 255, 255, 0.45 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+
 .hero-content {
     flex: 1;
-    padding-right: 0 20px;
+    padding: 0 20px;
 }
 
 .hero-content h1 {
     font-size: 2.5rem;
-    color: var(--background-2);
+    color: var(--main-text);
     margin-bottom: 20px;
 }
 
 .hero-content p {
     font-size: 1.2rem;
-    color: var(--background-3);
+    color: var(--main-text);
     margin-bottom: 20px;
 }
 
@@ -139,6 +166,10 @@ span {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.hero-btn button:hover {
+    transform: scale(1.2); 
+}
+
 .btn-primario {
     background-color: var(--background-2);
     color: var(--background);
@@ -149,6 +180,8 @@ span {
     color: var(--background);
     border: 1px solid #333;
 }
+
+/* Hero img */
 
 .hero-img {
     display: flex;
@@ -162,7 +195,27 @@ span {
     width: 100%;
     max-width: 350px;
     height: auto;
-    object-fit: cover;  
+    object-fit: cover;
 }
 
+/* Primera Sección para la entrega */
 
+.nosotros {
+    padding: 3rem 2rem;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.nosotros h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.nosotros p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
