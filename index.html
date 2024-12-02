@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mandale Pollo</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mediaqueriess.css">
     
     <!-- Fuente -->
 
@@ -12,33 +13,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
     <!-- Navbar -->
 
     <header>
-
         <nav class="navbar">
+            <!-- Menú hamburguesa -->
+            <label for="menu-toggle" class="menu-label">
+                <img src="./img/menu.png" alt="Logo menú hamburguesa" class="menu-icon">
+            </label>
+            <input type="checkbox" id="menu-toggle">
+
             <button class="logo-btn">
                 <img src="../img/Logo-2.png" alt="Logo" class="logo">
             </button>
         
-            <ul class="navbar-list">
-                <li><a href="#">Disfruta de nuestra <span>CARTA</span> bajo tu propio riesgo!</a></li>
-                <li><a href="#"><span>PROMOCIONES</span>, porque a veces merecemos romper la dieta</a></li>
-                <li><a href="#">Busca nuestro <span>LOCAL</span> mas cercano y sacate las ganas</a></li>
-                <li><a href="#"><span>Conocenos</span> y antojate más</a></li>
+            <ul class="navbar-list"> 
+                <li>
+                    <a href="#menu">
+                        <span class="long-text">Disfruta de nuestra <span>CARTA</span> bajo tu propio riesgo!</span>
+                        <span class="short-text">Carta</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#promociones">
+                        <span class="long-text"><span>PROMOCIONES</span>, porque a veces merecemos romper la dieta</span>
+                        <span class="short-text">Promociones</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#nosotros">
+                        <span class="long-text">Busca nuestro <span>LOCAL</span> más cercano y sacate las ganas</span>
+                        <span class="short-text">Locales</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#footer">
+                        <span class="long-text"><span>Conocenos</span> y antojate más</span>
+                        <span class="short-text">Conócenos</span>
+                    </a>
+                </li>
             </ul>
-        
-            <a href="#"><img src="../img/carrito.png" alt="Carrito" class="cart-icon"></a>
-        </nav>
 
+            <a href="#" class="cart-container"><img src="../img/carrito.png" alt="Carrito" class="cart-icon"></a>
+        </nav>
     </header>
 
     <!-- Hero -->
 
-    <section class="hero-container">
+    <section id="hero" class="hero-container">
         <section class="hero">
             <article class="hero-content">
                 <h1>Mandale Pollo a tu vida</h1>
@@ -54,21 +78,167 @@
         </section>
     </section>
 
-    <!-- Primera Sección para la Entrega -->
+    <!-- Nosotros -->
 
-    <section class="nosotros">
+    <section id="nosotros" class="nosotros">
         <h2>A las chicas de verdad les gusta el pollo frito</h2>
         <p>En <span>Mandale Pollo</span> nos apasiona ofrecer una experiencia única a todos nuestros clientes.
             Desde el primer crujido que genera nuestra comida en tu boca, buscamos que sientas el sabor de la tradición, combinado con la frescura y calidad de nuestros ingredientes, sin mencionar todo el amor y voluntad que hay detrás de cada plato. 
             Cada día nos esforzamos por crear un ambiente acogedor donde el sabor, el servicio y la buena onda sean nuestra carta de presentación.
         </p>
         <p>Nosotros valoramos y estamos comprometidos con hacer las cosas bien, desde el mas mínimo detalle y, por supuesto, comprometidos a satisfacer a nuestros clientes.
-            El pollo frito no es solo agarrar una pieza de pollo y freírla, creemos que un buen plato de pollo frito puede hacer más que llenar la panza, sobre todo cuando esta hecho con todo el amor que nosotros le ponemos.
+            El pollo frito no es solo agarrar una pieza de pollo y freírla, creemos que un buen plato de pollo frito puede hacer más que llenar la panza, sobre todo cuando está hecho con todo el amor que nosotros le ponemos.
             Buscamos que nuestros platos creen recuerdos, sonrisas y momentos compartidos.
             Si elegís a <span>Mandale Pollo</span>, no solo vas a disfrutar de una comida deliciosa, sino que también le vas a dar tu apoyo a un negocio que se preocupa por cada cliente, un negocio con un equipo que da su 100% por brindarte la mejor calidad posible en todo que hace.
         </p>
     </section>
+
+    <!-- Promociones -->
+
+    <section id="promociones" class="promos">
+        <div class="promo-card">
+          <img src="./img/menu/nuggets.jfif" alt="Promo 2_ Nuggets">
+          <h3>Miércoles, feriado nuggetcional</h3>
+          <p>35% Off</p>
+          <button>Ponete una escarapela pidiendo ya</button>
+        </div>
+        <div class="promo-card">
+          <img src="./img/menu/balde.jfif" alt="Promo 1_ Balde de pollo frito">
+          <h3>Viernes para terminar fritos</h3>
+          <p>20% Off</p>
+          <button>Ya fue, ya se termina todo, pedilo tranquilo</button>
+        </div>
+    </section>
     
+    <!-- Menú -->
+
+    <section id="menu" class="menu">
+    <div class="Menu-container">
+        <h2>Nuestro menú, tu paraíso</h2>
+        <div class="menu-filtros">
+            <button>TODO</button>
+            <button>Hamburguesas</button>
+            <button>Milanesas</button>
+            <button>Acompañantes</button>
+            <button>Bebidas</button>
+        </div>
+    </div>
+
+
     
+        <hr class="divisordemenu">
+    
+        <div class="menu-carta-hamburguesa">
+            <h2>Hamburguesas</h2>
+            <p>Si sos de a los que no les gustan las milanesas de pollo, ahora vas a cambiar de opinión</p>
+            <div class="menu-items-container">
+                <div class="menu-item">
+                    <a href="producto-hamburguesa-simple.html">
+                        <img src="./img/menu/hamburguesa-simple.jfif" alt="Hamburguesa simple">
+                    </a>
+                    <h3>La más chiquita de la familia</h3>
+                    <p>Hamburguesa simple</p>
+                    <span>$1000</span>
+                </div>
+                <div class="menu-item">
+                    <a href="producto-hamburguesa-doble.html">
+                        <img src="./img/menu/hamburguesa-doble.jfif" alt="Hamburgesa doble">
+                    </a>
+                    <h3>Las mellizas de en medio</h3>
+                    <p>Una hamburguesa doble para matar la gula</p>
+                    <span>$1500</span>
+                </div>
+                <div class="menu-item">
+                    <a href="producto-hamburguesa-triple.html">
+                        <img src="./img/menu/haburguesa-triple.jfif" alt="Hamburguesa triple">
+                    </a>
+                    <h3>La POLLOTÓMICA</h3>
+                    <p>Hay que ser muy valiente o estar muy loco para ésto, pero nosotros te bancamos</p>
+                    <span>$2000</span>
+                </div>
+            </div>
+        </div>
+    
+        <hr class="divisordemenu">
+    
+        <div class="menu-carta-milanesa">
+            <h2>Milanesas</h2>
+            <p>OBVIAMENTE que no podía no haber milanesas</p>
+            <div class="menu-items-container">
+                <div class="menu-item">
+                    <a href="producto-milanesa-pure.html">
+                        <img src="./img/menu/milanesa-pure.jfif" alt="Milanesa con puré">
+                    </a>
+                    <h3>Milanesa con puré</h3>
+                    <p>Un plato típico, pero que nunca está demás</p>
+                    <span>$1300</span>
+                </div>
+                <div class="menu-item">
+                    <a href="producto-milanesa-ensalada.html">
+                        <img src="./img/menu/milanesa-ensalada.jfif" alt="Milanesa con ensalada">
+                    </a>
+                    <h3>Milanesa con ensaladas</h3>
+                    <p>Una buena opción para volver más "saludable" todo lo que hacemos</p>
+                    <span>$1100</span>
+                </div>
+            </div>
+        </div>
+    
+        <hr class="divisordemenu">
+    
+        <div class="menu-carta-acompanantes">
+            <h2>Acompañantes</h2>
+            <p>No necesariamente tienen que ser acompañantes, pueden jugar como plato principal también</p>
+            <div class="menu-items-container">
+                <div class="menu-item">
+                    <a href="producto-nuggets.html">
+                        <img src="./img/menu/nuggets.jfif" alt="Nuggets">
+                    </a>
+                    <h3>Nuggets</h3>
+                    <p>Los más chiquitos para comerse un millón</p>
+                    <span>$1400</span>
+                </div>
+                <div class="menu-item">
+                    <a href="producto-bastoncitos.html">
+                        <img src="./img/menu/bastoncitos.jfif" alt="Bastoncitos">
+                    </a>
+                    <h3>Bastoncitos</h3>
+                    <p>Es de papa, es de queso, no!! Es de Pollo!</p>
+                    <span>$1500</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Teléfono: +54 123-456-789</p>
+                <p>Email: contacto@mandalepollo.com</p>
+                <p>Ubicación: Avenida del Pollo 123, Córdoba capital</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes: 12 PM - 02 AM</p>
+                <p>Sábados y Domingos: 12 PM - 12 AM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Mandale Pollo. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
