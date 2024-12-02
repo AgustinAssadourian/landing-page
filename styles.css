@@ -33,7 +33,7 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     padding: 15px 80px;
     position: fixed;
@@ -51,6 +51,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+/* Logo */
 .logo-btn {
     background: transparent;
     border: none;
@@ -70,68 +71,52 @@ body {
 }
 
 
+.menu-cart-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+
+.menu-label {
+    cursor: pointer;
+    width: 30px; 
+    height: 30px;
+}
+
+.menu-icon {
+    width: 100%; 
+    height: auto;
+}
+
+
+#menu-toggle {
+    display: none; 
+}
+
+
 .navbar-list {
     display: flex;
     gap: 40px;
     align-items: center;
-    margin-left: auto; 
-}
-
-.navbar-list li {
-    flex: 1;
-    text-align: center;
-}
-
-.long-text {
-    display: inline;
-}
-
-.short-text {
-    display: none;
+    list-style: none;
 }
 
 
-.cart-container {
-    margin-left: auto; /* Asegura que el carrito esté separado de todo */
-    order: 3; /* Siempre estará al final */
+#menu-toggle:checked ~ .navbar-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: var(--background);
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
 }
-
-.cart-icon {
-    height: 35px;
-    width: auto;
-}
-
-.cart-icon:hover {
-    transform: scale(1.4);
-}
-
-a {
-    color: var(--main-text);
-    position: relative; 
-}
-
-/* Asegurémonos de que el enlace ocupe el espacio completo y no haya interferencias */
-.navbar-list a {
-    position: relative;
-    display: inline-block; /* Asegura que el enlace sea un bloque en línea */
-}
-
-/* Transición para el span dentro del a */
-.navbar-list a span {
-    display: inline-block; /* Hace que el span ocupe su propio espacio */
-    transition: transform 0.3s ease; /* Transición suave solo para el texto */
-}
-
-/* Aplicar el hover sobre el a y hacer que el span crezca */
-.navbar-list a:hover span {
-    transform: scale(1.2); /* Aumenta solo el span del enlace */
-}
-
-
-
-
-/* Gracias CHAT GPT, 80 horas estuvimos borrando codigo y escribiendo para que solo el span pudiera aumentar de tamaño*/
-
 
 
 
@@ -244,7 +229,7 @@ span {
     border: 1px solid #333;
 }
 
-/* Hero img */
+/* -------------------- Hero img -----------------------------*/
 
 .hero-img {
     display: flex;
@@ -261,7 +246,7 @@ span {
     object-fit: cover;
 }
 
-/* Primera Sección para la entrega */
+/* ------------ Primera Sección para la entrega  ---------------------*/
 
 .nosotros {
     padding: 3rem 2rem;
