@@ -1,40 +1,110 @@
 
-/* TABLETS */
+/* Media Query para tablets (892px o menos) */
+@media screen and (max-width: 892px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* Logo, hamburguesa y carrito en línea */
+        align-items: center;
+        padding: 0 10px;
+    }
+
+   /* Estilo para el ícono del menú hamburguesa */
+.menu-label {
+    display: block;
+    cursor: pointer;
+    width: 40px; /* Ajusta el tamaño del ícono */
+    height: 40px;
+}
+
+.menu-icon {
+    max-width: 100%; /* Ajusta automáticamente el tamaño dentro del contenedor */
+    height: auto; /* Mantiene la proporción */
+}
+
+/* Menú desplegable */
+#menu-toggle:checked ~ .navbar-list {
+    display: flex;
+    flex-direction: column;
+    background: var(--background); /* Fondo del menú desplegable */
+    border-radius: 5px;
+    position: absolute;
+    top: 60px; /* Espaciado desde el menú hamburguesa */
+    left: 10px; /* Opcional: ajusta la posición horizontal */
+    right: 10px; /* Para centrar en pantalla */
+    z-index: 100;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    padding: 10px;
+    width: calc(100% - 20px); /* Ancho relativo con margen */
+}
+
+/* Estilo de los elementos del menú desplegable */
+.navbar-list li {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid var(--prueba); /* Línea divisoria entre enlaces */
+}
+
+.navbar-list li:last-child {
+    border-bottom: none; /* Elimina la línea del último elemento */
+}
 
 
+    .navbar-list {
+        display: none; /* Ocultar enlaces del menú */
+    }
 
+    #menu-toggle:checked ~ .navbar-list {
+        display: flex;
+        flex-direction: column;
+        background: var(--background); /* Fondo del menú desplegable */
+        border-radius: 5px;
+        position: absolute;
+        top: 60px; /* Ajustar según el tamaño del navbar */
+        right: 10px;
+        width: 200px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+    }
 
+    .navbar-list li {
+        text-align: left;
+        padding: 10px;
+        margin: 0;
+    }
 
+    .cart-container {
+        margin-left: 0; /* Mantener carrito alineado a la derecha */
+    }
+}
 
+/* Media Query para móviles (560px o menos) */
+@media screen and (max-width: 560px) {
+    .navbar {
+        padding: 10px;
+    }
 
+    .menu-label {
+        display: block;
+    }
 
+    .navbar-list {
+        display: none; /* Ocultar menú por defecto */
+    }
 
-/* CELULARES */
+    #menu-toggle:checked ~ .navbar-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        width: 180px;
+        background: var(--background); /* Fondo del menú desplegable */
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .cart-container {
+        margin-left: 0;
+    }
+}
