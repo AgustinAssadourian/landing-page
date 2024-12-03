@@ -422,11 +422,6 @@ span {
 }
 
 
-.hamburguesarota {
-    width: 266px;
-    height: 366px;
-}
-
 .menu-items-container {
     display: flex;
     flex-wrap: wrap; 
